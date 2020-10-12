@@ -1,0 +1,13 @@
+C:\Users\josep\OneDrive - Cardiff University\repos\!C# - Workspace\MCDungeonTools\MCDungeonTools\bin\Debug\MCDungeonTools.exe.config
+C:\Users\josep\OneDrive - Cardiff University\repos\!C# - Workspace\MCDungeonTools\MCDungeonTools\bin\Debug\MCDungeonTools.exe
+C:\Users\josep\OneDrive - Cardiff University\repos\!C# - Workspace\MCDungeonTools\MCDungeonTools\bin\Debug\MCDungeonTools.pdb
+C:\Users\josep\OneDrive - Cardiff University\repos\!C# - Workspace\MCDungeonTools\MCDungeonTools\obj\Debug\MCDungeonTools.csprojAssemblyReference.cache
+C:\Users\josep\OneDrive - Cardiff University\repos\!C# - Workspace\MCDungeonTools\MCDungeonTools\obj\Debug\MCDungeonTools.Main.resources
+C:\Users\josep\OneDrive - Cardiff University\repos\!C# - Workspace\MCDungeonTools\MCDungeonTools\obj\Debug\MCDungeonTools.Properties.Resources.resources
+C:\Users\josep\OneDrive - Cardiff University\repos\!C# - Workspace\MCDungeonTools\MCDungeonTools\obj\Debug\MCDungeonTools.csproj.GenerateResource.cache
+C:\Users\josep\OneDrive - Cardiff University\repos\!C# - Workspace\MCDungeonTools\MCDungeonTools\obj\Debug\MCDungeonTools.csproj.CoreCompileInputs.cache
+C:\Users\josep\OneDrive - Cardiff University\repos\!C# - Workspace\MCDungeonTools\MCDungeonTools\obj\Debug\MCDungeonTools.exe
+C:\Users\josep\OneDrive - Cardiff University\repos\!C# - Workspace\MCDungeonTools\MCDungeonTools\obj\Debug\MCDungeonTools.pdb
+C:\Users\josep\OneDrive - Cardiff University\repos\!C# - Workspace\MCDungeonTools\MCDungeonTools\bin\Debug\Newtonsoft.Json.dll
+C:\Users\josep\OneDrive - Cardiff University\repos\!C# - Workspace\MCDungeonTools\MCDungeonTools\bin\Debug\Newtonsoft.Json.xml
+C:\Users\josep\OneDrive - Cardiff University\repos\!C# - Workspace\MCDungeonTools\MCDungeonTools\obj\Debug\MCDungeonTools.csproj.CopyComplete
