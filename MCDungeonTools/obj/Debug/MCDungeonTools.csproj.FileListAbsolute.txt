@@ -11,3 +11,5 @@ C:\Users\josep\OneDrive - Cardiff University\repos\!C# - Workspace\MCDungeonTool
 C:\Users\josep\OneDrive - Cardiff University\repos\!C# - Workspace\MCDungeonTools\MCDungeonTools\bin\Debug\Newtonsoft.Json.dll
 C:\Users\josep\OneDrive - Cardiff University\repos\!C# - Workspace\MCDungeonTools\MCDungeonTools\bin\Debug\Newtonsoft.Json.xml
 C:\Users\josep\OneDrive - Cardiff University\repos\!C# - Workspace\MCDungeonTools\MCDungeonTools\obj\Debug\MCDungeonTools.csproj.CopyComplete
+C:\Users\josep\OneDrive - Cardiff University\repos\!C# - Workspace\MCDungeonTools\MCDungeonTools\bin\Debug\DarkUI.dll
+C:\Users\josep\OneDrive - Cardiff University\repos\!C# - Workspace\MCDungeonTools\MCDungeonTools\bin\Debug\DarkUI.pdb

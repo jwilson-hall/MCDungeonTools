@@ -2,6 +2,7 @@
 using MCDungeonTools.assets.classes;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
@@ -64,10 +65,10 @@ namespace MCDungeonTools
         {
             txt_currencyEmeralds.Text = jDataRoot.currency[0].count.ToString();
             txt_rescuedVil.Text = jDataRoot.finishedObjectiveTags.Objective_RescuedVillager.ToString();
-            foreach (var item in jDataRoot.items)
-            {
-                Console.WriteLine(item.type);
-            }
+            cBox_Items.DataSource = jDataRoot.items;
+            cBox_Items.DisplayMember = "type";
+            
+            //cBox_Items.ValueMember = "";
         }
         private void resetForm()
         {
@@ -94,6 +95,29 @@ namespace MCDungeonTools
             cmd.WaitForExit();
             resetForm();
             MessageBox.Show("File has been saved and encrypted back to a .dat File");
+        }
+
+        private void cBox_Items_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (jDataRoot.items[cBox_Items.SelectedIndex].equipmentSlot==null)
+            {
+                lbl_slotorIndex.Text = "Inventory Index: "+jDataRoot.items[cBox_Items.SelectedIndex].inventoryIndex.ToString();
+
+            }
+            else
+            {
+                lbl_slotorIndex.Text = jDataRoot.items[cBox_Items.SelectedIndex].equipmentSlot;
+            }
+            cBox_Enchants.DataSource = jDataRoot.items[cBox_Items.SelectedIndex].enchantments;
+            cBox_Enchants.DisplayMember = "id";
+            if (jDataRoot.items[cBox_Items.SelectedIndex].enchantments == null)
+            {
+                cBox_Enchants.Enabled = false;
+            }
+            else
+            {
+                cBox_Enchants.Enabled = true;
+            }
         }
     }
 }
