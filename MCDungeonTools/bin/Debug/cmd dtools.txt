@@ -1,3 +1,0 @@
-PATH\dtool.exe "Path to file" <optional> "--overwrite=false"
-
-json will be converted to dat and vice versa
