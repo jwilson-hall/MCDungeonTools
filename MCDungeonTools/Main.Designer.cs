@@ -32,20 +32,24 @@
             this.btn_SaveLocation = new System.Windows.Forms.Button();
             this.lbl_SavePath = new System.Windows.Forms.Label();
             this.grp_savegame = new System.Windows.Forms.GroupBox();
+            this.gBox_EditItems = new System.Windows.Forms.GroupBox();
+            this.txt_power = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cBox_EnchantLevel = new System.Windows.Forms.ComboBox();
+            this.lbl_ELevel = new System.Windows.Forms.Label();
+            this.cBox_Enchants = new System.Windows.Forms.ComboBox();
+            this.lbl_enchants = new System.Windows.Forms.Label();
+            this.lbl_slotorIndex = new System.Windows.Forms.Label();
+            this.lbl_slot = new System.Windows.Forms.Label();
+            this.lbl_item = new System.Windows.Forms.Label();
+            this.cBox_Items = new System.Windows.Forms.ComboBox();
             this.lbl_rescuedVil = new System.Windows.Forms.Label();
             this.txt_rescuedVil = new System.Windows.Forms.TextBox();
             this.lbl_emeralds = new System.Windows.Forms.Label();
             this.txt_currencyEmeralds = new System.Windows.Forms.TextBox();
             this.btn_save = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cBox_Items = new System.Windows.Forms.ComboBox();
-            this.lbl_item = new System.Windows.Forms.Label();
-            this.lbl_slot = new System.Windows.Forms.Label();
-            this.lbl_slotorIndex = new System.Windows.Forms.Label();
-            this.lbl_enchants = new System.Windows.Forms.Label();
-            this.cBox_Enchants = new System.Windows.Forms.ComboBox();
             this.grp_savegame.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gBox_EditItems.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_SaveLocation
@@ -72,7 +76,7 @@
             this.grp_savegame.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grp_savegame.Controls.Add(this.groupBox1);
+            this.grp_savegame.Controls.Add(this.gBox_EditItems);
             this.grp_savegame.Controls.Add(this.lbl_rescuedVil);
             this.grp_savegame.Controls.Add(this.txt_rescuedVil);
             this.grp_savegame.Controls.Add(this.lbl_emeralds);
@@ -83,6 +87,125 @@
             this.grp_savegame.TabIndex = 2;
             this.grp_savegame.TabStop = false;
             this.grp_savegame.Text = "Save Game";
+            // 
+            // gBox_EditItems
+            // 
+            this.gBox_EditItems.Controls.Add(this.txt_power);
+            this.gBox_EditItems.Controls.Add(this.label1);
+            this.gBox_EditItems.Controls.Add(this.cBox_EnchantLevel);
+            this.gBox_EditItems.Controls.Add(this.lbl_ELevel);
+            this.gBox_EditItems.Controls.Add(this.cBox_Enchants);
+            this.gBox_EditItems.Controls.Add(this.lbl_enchants);
+            this.gBox_EditItems.Controls.Add(this.lbl_slotorIndex);
+            this.gBox_EditItems.Controls.Add(this.lbl_slot);
+            this.gBox_EditItems.Controls.Add(this.lbl_item);
+            this.gBox_EditItems.Controls.Add(this.cBox_Items);
+            this.gBox_EditItems.Location = new System.Drawing.Point(453, 20);
+            this.gBox_EditItems.Name = "gBox_EditItems";
+            this.gBox_EditItems.Size = new System.Drawing.Size(200, 368);
+            this.gBox_EditItems.TabIndex = 4;
+            this.gBox_EditItems.TabStop = false;
+            this.gBox_EditItems.Text = "Edit Items";
+            // 
+            // txt_power
+            // 
+            this.txt_power.Enabled = false;
+            this.txt_power.Location = new System.Drawing.Point(69, 143);
+            this.txt_power.Name = "txt_power";
+            this.txt_power.Size = new System.Drawing.Size(125, 20);
+            this.txt_power.TabIndex = 9;
+            this.txt_power.TextChanged += new System.EventHandler(this.txt_power_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(11, 146);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Power";
+            // 
+            // cBox_EnchantLevel
+            // 
+            this.cBox_EnchantLevel.Enabled = false;
+            this.cBox_EnchantLevel.FormattingEnabled = true;
+            this.cBox_EnchantLevel.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3"});
+            this.cBox_EnchantLevel.Location = new System.Drawing.Point(69, 108);
+            this.cBox_EnchantLevel.Name = "cBox_EnchantLevel";
+            this.cBox_EnchantLevel.Size = new System.Drawing.Size(125, 21);
+            this.cBox_EnchantLevel.TabIndex = 7;
+            this.cBox_EnchantLevel.SelectedIndexChanged += new System.EventHandler(this.cBox_EnchantLevel_SelectedIndexChanged);
+            // 
+            // lbl_ELevel
+            // 
+            this.lbl_ELevel.AutoSize = true;
+            this.lbl_ELevel.Location = new System.Drawing.Point(11, 111);
+            this.lbl_ELevel.Name = "lbl_ELevel";
+            this.lbl_ELevel.Size = new System.Drawing.Size(45, 13);
+            this.lbl_ELevel.TabIndex = 6;
+            this.lbl_ELevel.Text = "E/Level";
+            // 
+            // cBox_Enchants
+            // 
+            this.cBox_Enchants.Enabled = false;
+            this.cBox_Enchants.FormattingEnabled = true;
+            this.cBox_Enchants.Location = new System.Drawing.Point(69, 72);
+            this.cBox_Enchants.Name = "cBox_Enchants";
+            this.cBox_Enchants.Size = new System.Drawing.Size(125, 21);
+            this.cBox_Enchants.TabIndex = 5;
+            this.cBox_Enchants.SelectedIndexChanged += new System.EventHandler(this.cBox_Enchants_SelectedIndexChanged);
+            // 
+            // lbl_enchants
+            // 
+            this.lbl_enchants.AutoSize = true;
+            this.lbl_enchants.Location = new System.Drawing.Point(11, 75);
+            this.lbl_enchants.Name = "lbl_enchants";
+            this.lbl_enchants.Size = new System.Drawing.Size(52, 13);
+            this.lbl_enchants.TabIndex = 4;
+            this.lbl_enchants.Text = "Enchants";
+            // 
+            // lbl_slotorIndex
+            // 
+            this.lbl_slotorIndex.AutoSize = true;
+            this.lbl_slotorIndex.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_slotorIndex.Location = new System.Drawing.Point(49, 50);
+            this.lbl_slotorIndex.Name = "lbl_slotorIndex";
+            this.lbl_slotorIndex.Size = new System.Drawing.Size(13, 16);
+            this.lbl_slotorIndex.TabIndex = 3;
+            this.lbl_slotorIndex.Text = "-";
+            // 
+            // lbl_slot
+            // 
+            this.lbl_slot.AutoSize = true;
+            this.lbl_slot.Location = new System.Drawing.Point(11, 50);
+            this.lbl_slot.Name = "lbl_slot";
+            this.lbl_slot.Size = new System.Drawing.Size(25, 13);
+            this.lbl_slot.TabIndex = 2;
+            this.lbl_slot.Text = "Slot";
+            // 
+            // lbl_item
+            // 
+            this.lbl_item.AutoSize = true;
+            this.lbl_item.Location = new System.Drawing.Point(11, 24);
+            this.lbl_item.Name = "lbl_item";
+            this.lbl_item.Size = new System.Drawing.Size(27, 13);
+            this.lbl_item.TabIndex = 1;
+            this.lbl_item.Text = "Item";
+            // 
+            // cBox_Items
+            // 
+            this.cBox_Items.Enabled = false;
+            this.cBox_Items.FormattingEnabled = true;
+            this.cBox_Items.Location = new System.Drawing.Point(44, 19);
+            this.cBox_Items.Name = "cBox_Items";
+            this.cBox_Items.Size = new System.Drawing.Size(150, 21);
+            this.cBox_Items.TabIndex = 0;
+            this.cBox_Items.DropDown += new System.EventHandler(this.cBox_Items_DropDown);
+            this.cBox_Items.SelectedIndexChanged += new System.EventHandler(this.cBox_Items_SelectedIndexChanged);
             // 
             // lbl_rescuedVil
             // 
@@ -95,6 +218,7 @@
             // 
             // txt_rescuedVil
             // 
+            this.txt_rescuedVil.Enabled = false;
             this.txt_rescuedVil.Location = new System.Drawing.Point(7, 86);
             this.txt_rescuedVil.Name = "txt_rescuedVil";
             this.txt_rescuedVil.Size = new System.Drawing.Size(100, 20);
@@ -111,6 +235,7 @@
             // 
             // txt_currencyEmeralds
             // 
+            this.txt_currencyEmeralds.Enabled = false;
             this.txt_currencyEmeralds.Location = new System.Drawing.Point(7, 37);
             this.txt_currencyEmeralds.Name = "txt_currencyEmeralds";
             this.txt_currencyEmeralds.Size = new System.Drawing.Size(100, 20);
@@ -118,6 +243,7 @@
             // 
             // btn_save
             // 
+            this.btn_save.Enabled = false;
             this.btn_save.Location = new System.Drawing.Point(597, 454);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(75, 23);
@@ -125,75 +251,6 @@
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = true;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.cBox_Enchants);
-            this.groupBox1.Controls.Add(this.lbl_enchants);
-            this.groupBox1.Controls.Add(this.lbl_slotorIndex);
-            this.groupBox1.Controls.Add(this.lbl_slot);
-            this.groupBox1.Controls.Add(this.lbl_item);
-            this.groupBox1.Controls.Add(this.cBox_Items);
-            this.groupBox1.Location = new System.Drawing.Point(453, 20);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 368);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Edit Items";
-            // 
-            // cBox_Items
-            // 
-            this.cBox_Items.FormattingEnabled = true;
-            this.cBox_Items.Location = new System.Drawing.Point(44, 19);
-            this.cBox_Items.Name = "cBox_Items";
-            this.cBox_Items.Size = new System.Drawing.Size(150, 21);
-            this.cBox_Items.TabIndex = 0;
-            this.cBox_Items.SelectedIndexChanged += new System.EventHandler(this.cBox_Items_SelectedIndexChanged);
-            // 
-            // lbl_item
-            // 
-            this.lbl_item.AutoSize = true;
-            this.lbl_item.Location = new System.Drawing.Point(11, 24);
-            this.lbl_item.Name = "lbl_item";
-            this.lbl_item.Size = new System.Drawing.Size(27, 13);
-            this.lbl_item.TabIndex = 1;
-            this.lbl_item.Text = "Item";
-            // 
-            // lbl_slot
-            // 
-            this.lbl_slot.AutoSize = true;
-            this.lbl_slot.Location = new System.Drawing.Point(11, 50);
-            this.lbl_slot.Name = "lbl_slot";
-            this.lbl_slot.Size = new System.Drawing.Size(25, 13);
-            this.lbl_slot.TabIndex = 2;
-            this.lbl_slot.Text = "Slot";
-            // 
-            // lbl_slotorIndex
-            // 
-            this.lbl_slotorIndex.AutoSize = true;
-            this.lbl_slotorIndex.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_slotorIndex.Location = new System.Drawing.Point(49, 50);
-            this.lbl_slotorIndex.Name = "lbl_slotorIndex";
-            this.lbl_slotorIndex.Size = new System.Drawing.Size(13, 16);
-            this.lbl_slotorIndex.TabIndex = 3;
-            this.lbl_slotorIndex.Text = "-";
-            // 
-            // lbl_enchants
-            // 
-            this.lbl_enchants.AutoSize = true;
-            this.lbl_enchants.Location = new System.Drawing.Point(11, 75);
-            this.lbl_enchants.Name = "lbl_enchants";
-            this.lbl_enchants.Size = new System.Drawing.Size(52, 13);
-            this.lbl_enchants.TabIndex = 4;
-            this.lbl_enchants.Text = "Enchants";
-            // 
-            // cBox_Enchants
-            // 
-            this.cBox_Enchants.FormattingEnabled = true;
-            this.cBox_Enchants.Location = new System.Drawing.Point(69, 72);
-            this.cBox_Enchants.Name = "cBox_Enchants";
-            this.cBox_Enchants.Size = new System.Drawing.Size(125, 21);
-            this.cBox_Enchants.TabIndex = 5;
             // 
             // Main
             // 
@@ -209,8 +266,8 @@
             this.Text = "MCDungeon Tools";
             this.grp_savegame.ResumeLayout(false);
             this.grp_savegame.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gBox_EditItems.ResumeLayout(false);
+            this.gBox_EditItems.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,13 +283,17 @@
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.Label lbl_rescuedVil;
         private System.Windows.Forms.TextBox txt_rescuedVil;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gBox_EditItems;
         private System.Windows.Forms.ComboBox cBox_Items;
         private System.Windows.Forms.Label lbl_slotorIndex;
         private System.Windows.Forms.Label lbl_slot;
         private System.Windows.Forms.Label lbl_item;
         private System.Windows.Forms.ComboBox cBox_Enchants;
         private System.Windows.Forms.Label lbl_enchants;
+        private System.Windows.Forms.ComboBox cBox_EnchantLevel;
+        private System.Windows.Forms.Label lbl_ELevel;
+        private System.Windows.Forms.TextBox txt_power;
+        private System.Windows.Forms.Label label1;
     }
 }
 
