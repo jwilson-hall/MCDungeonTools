@@ -32,6 +32,8 @@
             this.btn_SaveLocation = new System.Windows.Forms.Button();
             this.lbl_SavePath = new System.Windows.Forms.Label();
             this.grp_savegame = new System.Windows.Forms.GroupBox();
+            this.lbl_XP = new System.Windows.Forms.Label();
+            this.txt_XP = new System.Windows.Forms.TextBox();
             this.gBox_EditItems = new System.Windows.Forms.GroupBox();
             this.txt_power = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -76,6 +78,8 @@
             this.grp_savegame.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.grp_savegame.Controls.Add(this.lbl_XP);
+            this.grp_savegame.Controls.Add(this.txt_XP);
             this.grp_savegame.Controls.Add(this.gBox_EditItems);
             this.grp_savegame.Controls.Add(this.lbl_rescuedVil);
             this.grp_savegame.Controls.Add(this.txt_rescuedVil);
@@ -87,6 +91,23 @@
             this.grp_savegame.TabIndex = 2;
             this.grp_savegame.TabStop = false;
             this.grp_savegame.Text = "Save Game";
+            // 
+            // lbl_XP
+            // 
+            this.lbl_XP.AutoSize = true;
+            this.lbl_XP.Location = new System.Drawing.Point(120, 21);
+            this.lbl_XP.Name = "lbl_XP";
+            this.lbl_XP.Size = new System.Drawing.Size(21, 13);
+            this.lbl_XP.TabIndex = 6;
+            this.lbl_XP.Text = "XP";
+            // 
+            // txt_XP
+            // 
+            this.txt_XP.Enabled = false;
+            this.txt_XP.Location = new System.Drawing.Point(123, 37);
+            this.txt_XP.Name = "txt_XP";
+            this.txt_XP.Size = new System.Drawing.Size(100, 20);
+            this.txt_XP.TabIndex = 5;
             // 
             // gBox_EditItems
             // 
@@ -240,6 +261,7 @@
             this.txt_currencyEmeralds.Name = "txt_currencyEmeralds";
             this.txt_currencyEmeralds.Size = new System.Drawing.Size(100, 20);
             this.txt_currencyEmeralds.TabIndex = 0;
+            this.txt_currencyEmeralds.TextChanged += new System.EventHandler(this.txt_currencyEmeralds_TextChanged);
             // 
             // btn_save
             // 
@@ -294,6 +316,8 @@
         private System.Windows.Forms.Label lbl_ELevel;
         private System.Windows.Forms.TextBox txt_power;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_XP;
+        private System.Windows.Forms.TextBox txt_XP;
     }
 }
 
