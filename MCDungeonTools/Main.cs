@@ -61,16 +61,21 @@ namespace MCDungeonTools
                 cmd.StandardInput.Flush();
                 cmd.StandardInput.Close();
                 cmd.WaitForExit();
-                tempFileData = File.ReadAllText(Path.GetDirectoryName(SaveFile)+"//" + Path.GetFileNameWithoutExtension(SaveFile) + ".json");
-                string tempFileData = "";
+                string tempFileData;
+                tempFileData = File.ReadAllText(Path.GetDirectoryName(SaveFile)+"\\" + Path.GetFileNameWithoutExtension(SaveFile) + ".json");
                 if (tempFileData.Contains("4294967295"))
                 {
                     saveFileData = tempFileData.Replace("4294967295", "180");
 
                 }
+                else
+                {
+                    saveFileData = tempFileData;
+                }
+                Console.WriteLine(Path.GetDirectoryName(SaveFile) + "\\" + Path.GetFileNameWithoutExtension(SaveFile) + ".json");
                 deserialiseJSON(saveFileData);
                 loadObjects();
-                collectEnchants();
+                //collectEnchants();
             }
         }
         private void btn_save_Click(object sender, EventArgs e)
@@ -78,7 +83,7 @@ namespace MCDungeonTools
             jDataRoot.currency[0].count = Convert.ToInt32(txt_currencyEmeralds.Text);
             jDataRoot.finishedObjectiveTags.Objective_RescuedVillager = Convert.ToInt32(txt_rescuedVil.Text);
             jDataRoot.xp = Convert.ToInt32(txt_XP.Text);
-            File.WriteAllText(Path.GetDirectoryName(SaveFile) + "//" + Path.GetFileNameWithoutExtension(SaveFile) + ".json", serializeJSON());
+            File.WriteAllText(Path.GetDirectoryName(SaveFile) + "\\" + Path.GetFileNameWithoutExtension(SaveFile) + ".json", serializeJSON());
             Process cmd = new Process();
             cmd.StartInfo.FileName = "cmd.exe";
             cmd.StartInfo.RedirectStandardInput = true;
@@ -86,7 +91,7 @@ namespace MCDungeonTools
             cmd.StartInfo.CreateNoWindow = true;
             cmd.StartInfo.UseShellExecute = false;
             cmd.Start();
-            cmd.StandardInput.WriteLine("dtools.exe " + '"' + Path.GetDirectoryName(SaveFile) + "//" + Path.GetFileNameWithoutExtension(SaveFile) + ".json" + '"');
+            cmd.StandardInput.WriteLine("dtools.exe " + '"' + Path.GetDirectoryName(SaveFile) + "\\" + Path.GetFileNameWithoutExtension(SaveFile) + ".json" + '"');
             cmd.StandardInput.Flush();
             cmd.StandardInput.Close();
             cmd.WaitForExit();
