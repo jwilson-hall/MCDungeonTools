@@ -5,7 +5,6 @@ C:\Users\josep\OneDrive - Cardiff University\repos\!C# - Workspace\MCDungeonTool
 C:\Users\josep\OneDrive - Cardiff University\repos\!C# - Workspace\MCDungeonTools\MCDungeonTools\bin\Release\Newtonsoft.Json.dll
 C:\Users\josep\OneDrive - Cardiff University\repos\!C# - Workspace\MCDungeonTools\MCDungeonTools\bin\Release\DarkUI.pdb
 C:\Users\josep\OneDrive - Cardiff University\repos\!C# - Workspace\MCDungeonTools\MCDungeonTools\bin\Release\Newtonsoft.Json.xml
-C:\Users\josep\OneDrive - Cardiff University\repos\!C# - Workspace\MCDungeonTools\MCDungeonTools\obj\Release\MCDungeonTools.csprojAssemblyReference.cache
 C:\Users\josep\OneDrive - Cardiff University\repos\!C# - Workspace\MCDungeonTools\MCDungeonTools\obj\Release\MCDungeonTools.Main.resources
 C:\Users\josep\OneDrive - Cardiff University\repos\!C# - Workspace\MCDungeonTools\MCDungeonTools\obj\Release\MCDungeonTools.Properties.Resources.resources
 C:\Users\josep\OneDrive - Cardiff University\repos\!C# - Workspace\MCDungeonTools\MCDungeonTools\obj\Release\MCDungeonTools.csproj.GenerateResource.cache
