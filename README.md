@@ -4,11 +4,23 @@ A Tool to customize Minecraft Dungeons saves
 Decryption tool used for the saves can be found here : https://github.com/HellPie/DungeonTools
 
 Newtonsoft.json library for processing json data https://github.com/JamesNK/Newtonsoft.Json
+## Coming soon
+There are many new features coming to this program that are still in development
+- edit which enchants wepons have
+- give the player progression keys
+- unlock harder difficulties
+- give yourself any item
+
 
 ## How to use it
 
 > **WARNING**: The tool overwrites existing files by default. Be sure to back-up files before use.
 
+1. We recommend that  you back-up and save files that you plan to edit as there is a possibility that changing certain things with save files can cause the game to not be able to read them.
+
+2. Navigate to “%HOMEPATH%\Saved Games\Mojang Studios\Dungeons” in order to access your saves with this program
+
+3. Make necessary edits and then press save
 
 ## Legal Disclaimer
 
