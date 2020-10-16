@@ -6,7 +6,7 @@ Decryption tool used for the saves can be found here : https://github.com/HellPi
 Newtonsoft.json library for processing json data https://github.com/JamesNK/Newtonsoft.Json
 ## Coming soon
 There are many new features coming to this program that are still in development
-- edit which enchants wepons have
+- edit which enchants weapons have
 - give the player progression keys
 - unlock harder difficulties
 - give yourself any item
