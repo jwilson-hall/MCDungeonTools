@@ -61,19 +61,28 @@ namespace MCDungeonTools
                 cmd.StandardInput.Close();
                 cmd.WaitForExit();
                 string tempFileData;
-                tempFileData = File.ReadAllText(Path.GetDirectoryName(SaveFile)+"\\" + Path.GetFileNameWithoutExtension(SaveFile) + ".json");
-                if (tempFileData.Contains("4294967295"))
+                try
                 {
-                    saveFileData = tempFileData.Replace("4294967295", "180");
+                    tempFileData = File.ReadAllText(Path.GetDirectoryName(SaveFile)+"\\" + Path.GetFileNameWithoutExtension(SaveFile) + ".json");
+                    if (tempFileData.Contains("4294967295"))
+                    {
+                        saveFileData = tempFileData.Replace("4294967295", "180");
 
+                    }
+                    else
+                    {
+                        saveFileData = tempFileData;
+                    }
+                    Console.WriteLine(Path.GetDirectoryName(SaveFile) + "\\" + Path.GetFileNameWithoutExtension(SaveFile) + ".json");
+                    deserialiseJSON(saveFileData);
+                    loadObjects();
                 }
-                else
+                catch (System.IO.FileNotFoundException)
                 {
-                    saveFileData = tempFileData;
+                    MessageBox.Show("File not found");
+                    fileLoaded = false;
+                    resetForm();
                 }
-                Console.WriteLine(Path.GetDirectoryName(SaveFile) + "\\" + Path.GetFileNameWithoutExtension(SaveFile) + ".json");
-                deserialiseJSON(saveFileData);
-                loadObjects();
                 //collectEnchants();
             }
         }
@@ -182,9 +191,28 @@ namespace MCDungeonTools
                 }
             }
         }
+        private void listBox_runes_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            if (e.CurrentValue == CheckState.Unchecked)
+            {
+                if (!jDataRoot.progressionKeys.Contains(listBox_runes.Items[e.Index].ToString()))
+                {
+                    jDataRoot.progressionKeys.Add(listBox_runes.Items[e.Index].ToString());
+                }
+            }
+            else if (e.CurrentValue == CheckState.Checked)
+            {
+                jDataRoot.progressionKeys.Remove(listBox_runes.Items[e.Index].ToString());
+            }
+            Console.WriteLine();
+            foreach (var item in jDataRoot.progressionKeys)
+            {
+                Console.WriteLine(item.ToString());
+            }
+        }
         //-------------------------Form Events-----------------------------
         //-------------------------Functions-----------------------------
-        
+
         private void deserialiseJSON(string strJSON)
         {
             try
@@ -210,7 +238,16 @@ namespace MCDungeonTools
                 txt_rescuedVil.Text = jDataRoot.finishedObjectiveTags.Objective_RescuedVillager.ToString();
                 cBox_Items.DataSource = jDataRoot.items;
                 cBox_Items.DisplayMember = "type";
-
+                for (int i = 0; i < listBox_runes.Items.Count; i++)
+                {
+                    for (int j = 0; j < jDataRoot.progressionKeys.Count; j++)
+                    {
+                        if (listBox_runes.Items[i].ToString()==jDataRoot.progressionKeys[j].ToString())
+                        {
+                            listBox_runes.SetItemCheckState(i, CheckState.Checked);
+                        }
+                    }
+                }
             }
             catch (Exception)
             {
@@ -228,6 +265,7 @@ namespace MCDungeonTools
             cBox_Items.Enabled = true;
             btn_save.Enabled = true;
             txt_XP.Enabled = true;
+            listBox_runes.Enabled = true;
         }
         private void resetForm()
         {
@@ -252,6 +290,11 @@ namespace MCDungeonTools
             btn_save.Enabled = false;
             txt_XP.Enabled = false;
             txt_XP.Text = "";
+            for (int i = 0; i < listBox_runes.Items.Count; i++)
+            {
+                listBox_runes.SetItemCheckState(i, CheckState.Unchecked);
+            }
+            listBox_runes.Enabled = false;
         }
         string sroot = "";
         private void collectEnchants()
@@ -277,6 +320,8 @@ namespace MCDungeonTools
         }
 
         
+
+
         //-------------------------Functions-----------------------------
 
 

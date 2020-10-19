@@ -29,7 +29,7 @@ namespace MCDungeonTools.assets.classes
         public string playerId { get; set; } 
         public Progress progress { get; set; } 
         public ProgressStatCounters progressStatCounters { get; set; } 
-        public List<object> progressionKeys { get; set; } 
+        public List<object> progressionKeys { get; set; }
         public string skin { get; set; } 
         public ThreatLevels threatLevels { get; set; } 
         public int timestamp { get; set; } 

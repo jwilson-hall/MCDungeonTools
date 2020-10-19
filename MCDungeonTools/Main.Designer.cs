@@ -50,6 +50,7 @@
             this.lbl_emeralds = new System.Windows.Forms.Label();
             this.txt_currencyEmeralds = new System.Windows.Forms.TextBox();
             this.btn_save = new System.Windows.Forms.Button();
+            this.listBox_runes = new System.Windows.Forms.CheckedListBox();
             this.grp_savegame.SuspendLayout();
             this.gBox_EditItems.SuspendLayout();
             this.SuspendLayout();
@@ -78,6 +79,7 @@
             this.grp_savegame.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.grp_savegame.Controls.Add(this.listBox_runes);
             this.grp_savegame.Controls.Add(this.lbl_XP);
             this.grp_savegame.Controls.Add(this.txt_XP);
             this.grp_savegame.Controls.Add(this.gBox_EditItems);
@@ -111,6 +113,8 @@
             // 
             // gBox_EditItems
             // 
+            this.gBox_EditItems.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gBox_EditItems.Controls.Add(this.txt_power);
             this.gBox_EditItems.Controls.Add(this.label1);
             this.gBox_EditItems.Controls.Add(this.cBox_EnchantLevel);
@@ -148,6 +152,7 @@
             // 
             // cBox_EnchantLevel
             // 
+            this.cBox_EnchantLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBox_EnchantLevel.Enabled = false;
             this.cBox_EnchantLevel.FormattingEnabled = true;
             this.cBox_EnchantLevel.Items.AddRange(new object[] {
@@ -172,6 +177,7 @@
             // 
             // cBox_Enchants
             // 
+            this.cBox_Enchants.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBox_Enchants.Enabled = false;
             this.cBox_Enchants.FormattingEnabled = true;
             this.cBox_Enchants.Location = new System.Drawing.Point(69, 72);
@@ -219,6 +225,7 @@
             // 
             // cBox_Items
             // 
+            this.cBox_Items.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBox_Items.Enabled = false;
             this.cBox_Items.FormattingEnabled = true;
             this.cBox_Items.Location = new System.Drawing.Point(44, 19);
@@ -265,6 +272,7 @@
             // 
             // btn_save
             // 
+            this.btn_save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_save.Enabled = false;
             this.btn_save.Location = new System.Drawing.Point(597, 454);
             this.btn_save.Name = "btn_save";
@@ -273,6 +281,26 @@
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = true;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            // 
+            // listBox_runes
+            // 
+            this.listBox_runes.Enabled = false;
+            this.listBox_runes.FormattingEnabled = true;
+            this.listBox_runes.Items.AddRange(new object[] {
+            "unlocked-rune-o",
+            "unlocked-rune-i",
+            "unlocked-rune-a",
+            "unlocked-rune-h",
+            "unlocked-rune-v",
+            "unlocked-rune-n",
+            "unlocked-rune-e",
+            "unlocked-rune-p",
+            "unlocked-rune-t"});
+            this.listBox_runes.Location = new System.Drawing.Point(6, 128);
+            this.listBox_runes.Name = "listBox_runes";
+            this.listBox_runes.Size = new System.Drawing.Size(120, 139);
+            this.listBox_runes.TabIndex = 7;
+            this.listBox_runes.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.listBox_runes_ItemCheck);
             // 
             // Main
             // 
@@ -318,6 +346,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl_XP;
         private System.Windows.Forms.TextBox txt_XP;
+        private System.Windows.Forms.CheckedListBox listBox_runes;
     }
 }
 
