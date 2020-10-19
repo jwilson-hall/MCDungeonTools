@@ -12,3 +12,4 @@ C:\Users\josep\OneDrive - Cardiff University\repos\!C# - Workspace\MCDungeonTool
 C:\Users\josep\OneDrive - Cardiff University\repos\!C# - Workspace\MCDungeonTools\MCDungeonTools\obj\Release\MCDungeonTools.csproj.CopyComplete
 C:\Users\josep\OneDrive - Cardiff University\repos\!C# - Workspace\MCDungeonTools\MCDungeonTools\obj\Release\MCDungeonTools.exe
 C:\Users\josep\OneDrive - Cardiff University\repos\!C# - Workspace\MCDungeonTools\MCDungeonTools\obj\Release\MCDungeonTools.pdb
+C:\Users\josep\OneDrive - Cardiff University\repos\!C# - Workspace\MCDungeonTools\MCDungeonTools\obj\Release\MCDungeonTools.csprojAssemblyReference.cache

@@ -1,5 +1,4 @@
-﻿using MCDungeonTools.assets;
-using MCDungeonTools.assets.classes;
+﻿using MCDungeonTools.assets.classes;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
