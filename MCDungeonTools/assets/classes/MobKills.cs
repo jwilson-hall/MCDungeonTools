@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MCDungeonTools.assets
 {
-    class MobKills
+    public class MobKills
     {
         public int archillager { get; set; }
         public int archvessel { get; set; }

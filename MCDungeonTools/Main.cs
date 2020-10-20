@@ -1,8 +1,10 @@
-﻿using MCDungeonTools.assets.classes;
+﻿using MCDungeonTools.assets;
+using MCDungeonTools.assets.classes;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -14,6 +16,7 @@ namespace MCDungeonTools
         {
             //MessageBox.Show("PLEASE NOTE. This tool may cause your save to corrupt so make sure you have a backup.");
             InitializeComponent();
+            dtoolsLoaded();
         }
         //-------------------------Objects-----------------------------
         readonly OpenFileDialog SelectFile = new OpenFileDialog(); 
@@ -23,67 +26,80 @@ namespace MCDungeonTools
         private string SaveFile;
         private string saveFileData;
         private bool fileLoaded=false;
+        private bool dtoolsLoaded()
+        {
+            if (File.Exists("dtools.exe"))
+            {
+                lbl_dtoolsStatus.ForeColor = Color.Green;
+                lbl_dtoolsStatus.Text = "dtools.exe FOUND";
+                return true;
+            }
+            lbl_dtoolsStatus.ForeColor = Color.Red;
+            lbl_dtoolsStatus.Text = "dtools.exe NOT FOUND";
+            return false;
+        }
         private List<string> allEnchants = new List<string>();
         //-------------------------Variables-----------------------------
         //-------------------------Form Events-----------------------------
         private void btn_SaveLocation_Click(object sender, EventArgs e)
         {
             resetForm();
-            try
+            if (dtoolsLoaded()==true)
             {
-                SelectFile.ShowDialog();
-                SaveFile = SelectFile.FileName;
-                lbl_SavePath.Text = Path.GetFileName(SaveFile);
-                if (SaveFile != "")
-                {
-                    fileLoaded = true;
-                    enableForm();
-                }
-
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("No file selected");
-                fileLoaded = false;
-            }
-            if (fileLoaded == true)
-            {
-                Process cmd = new Process();
-                cmd.StartInfo.FileName = "cmd.exe";
-                cmd.StartInfo.RedirectStandardInput = true;
-                cmd.StartInfo.RedirectStandardOutput = true;
-                cmd.StartInfo.CreateNoWindow = true;
-                cmd.StartInfo.UseShellExecute = false;
-                cmd.Start();
-
-                cmd.StandardInput.WriteLine("dtools.exe " + '"' + SaveFile + '"');
-                cmd.StandardInput.Flush();
-                cmd.StandardInput.Close();
-                cmd.WaitForExit();
-                string tempFileData;
                 try
                 {
-                    tempFileData = File.ReadAllText(Path.GetDirectoryName(SaveFile)+"\\" + Path.GetFileNameWithoutExtension(SaveFile) + ".json");
-                    if (tempFileData.Contains("4294967295"))
+                    SelectFile.ShowDialog();
+                    SaveFile = SelectFile.FileName;
+                    lbl_SavePath.Text = Path.GetFileName(SaveFile);
+                    if (SaveFile != "")
                     {
-                        saveFileData = tempFileData.Replace("4294967295", "180");
+                        fileLoaded = true;
+                        enableForm();
+                    }
 
-                    }
-                    else
-                    {
-                        saveFileData = tempFileData;
-                    }
-                    Console.WriteLine(Path.GetDirectoryName(SaveFile) + "\\" + Path.GetFileNameWithoutExtension(SaveFile) + ".json");
-                    deserialiseJSON(saveFileData);
-                    loadObjects();
                 }
-                catch (System.IO.FileNotFoundException)
+                catch (Exception)
                 {
-                    MessageBox.Show("File not found");
+                    MessageBox.Show("No file selected");
                     fileLoaded = false;
-                    resetForm();
                 }
-                //collectEnchants();
+                if (fileLoaded == true)
+                {
+                    Process cmd = new Process();
+                    cmd.StartInfo.FileName = "cmd.exe";
+                    cmd.StartInfo.RedirectStandardInput = true;
+                    cmd.StartInfo.RedirectStandardOutput = true;
+                    cmd.StartInfo.CreateNoWindow = true;
+                    cmd.StartInfo.UseShellExecute = false;
+                    cmd.Start();
+                    cmd.StandardInput.WriteLine("dtools.exe " + '"' + SaveFile + '"');
+                    cmd.StandardInput.Flush();
+                    cmd.StandardInput.Close();
+                    cmd.WaitForExit();
+                    string tempFileData;
+                    try
+                    {
+                        tempFileData = File.ReadAllText(Path.GetDirectoryName(SaveFile)+"\\" + Path.GetFileNameWithoutExtension(SaveFile) + ".json");
+                        if (tempFileData.Contains("4294967295"))
+                        {
+                            saveFileData = tempFileData.Replace("4294967295", "180");
+
+                        }
+                        else
+                        {
+                            saveFileData = tempFileData;
+                        }
+                        deserialiseJSON(saveFileData);
+                        loadObjects();
+                    }
+                    catch (FileNotFoundException)
+                    {
+                        MessageBox.Show("File not found");
+                        fileLoaded = false;
+                        resetForm();
+                    }
+                    //collectEnchants();
+                }
             }
         }
         private void btn_save_Click(object sender, EventArgs e)
@@ -204,11 +220,13 @@ namespace MCDungeonTools
             {
                 jDataRoot.progressionKeys.Remove(listBox_runes.Items[e.Index].ToString());
             }
-            Console.WriteLine();
-            foreach (var item in jDataRoot.progressionKeys)
-            {
-                Console.WriteLine(item.ToString());
-            }
+        }
+        private void listview_mobs_Killed_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Console.WriteLine(allMobs[listview_mobs_Killed.SelectedIndex].mobKills);
+            /*editMobKills tempEdit = new editMobKills(allMobs[listview_mobs_Killed.SelectedIndex].mobKills);
+            tempEdit.Show();*/
+            
         }
         //-------------------------Form Events-----------------------------
         //-------------------------Functions-----------------------------
@@ -219,10 +237,9 @@ namespace MCDungeonTools
             {
                 jDataRoot = JsonConvert.DeserializeObject<root>(strJSON);
             }
-            catch (Newtonsoft.Json.JsonReaderException e)
+            catch (JsonReaderException e)
             {
                 MessageBox.Show(e.ToString());
-                //throw;
             }
         }
         private string serializeJSON()
@@ -318,10 +335,6 @@ namespace MCDungeonTools
                 Console.WriteLine(item);
             }
         }
-
-        
-
-
         //-------------------------Functions-----------------------------
 
 

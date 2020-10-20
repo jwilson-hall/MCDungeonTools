@@ -32,6 +32,7 @@
             this.btn_SaveLocation = new System.Windows.Forms.Button();
             this.lbl_SavePath = new System.Windows.Forms.Label();
             this.grp_savegame = new System.Windows.Forms.GroupBox();
+            this.listBox_runes = new System.Windows.Forms.CheckedListBox();
             this.lbl_XP = new System.Windows.Forms.Label();
             this.txt_XP = new System.Windows.Forms.TextBox();
             this.gBox_EditItems = new System.Windows.Forms.GroupBox();
@@ -50,7 +51,7 @@
             this.lbl_emeralds = new System.Windows.Forms.Label();
             this.txt_currencyEmeralds = new System.Windows.Forms.TextBox();
             this.btn_save = new System.Windows.Forms.Button();
-            this.listBox_runes = new System.Windows.Forms.CheckedListBox();
+            this.lbl_dtoolsStatus = new System.Windows.Forms.Label();
             this.grp_savegame.SuspendLayout();
             this.gBox_EditItems.SuspendLayout();
             this.SuspendLayout();
@@ -93,6 +94,38 @@
             this.grp_savegame.TabIndex = 2;
             this.grp_savegame.TabStop = false;
             this.grp_savegame.Text = "Save Game";
+            // 
+            // listBox_runes
+            // 
+            this.listBox_runes.Enabled = false;
+            this.listBox_runes.FormattingEnabled = true;
+            this.listBox_runes.Items.AddRange(new object[] {
+            "shopkeeper_unlocked",
+            "mysterymerchant_unlocked",
+            "giftwrapper_unlocked",
+            "blacksmith_unlocked",
+            "luxurymerchant_unlocked",
+            "unlocked-rune-o",
+            "unlocked-rune-i",
+            "unlocked-rune-a",
+            "unlocked-rune-h",
+            "unlocked-rune-v",
+            "unlocked-rune-n",
+            "unlocked-rune-e",
+            "unlocked-rune-p",
+            "unlocked-rune-t",
+            "RuneGateDiscovered",
+            "rune-gate-open",
+            "lobby_bridge",
+            "op_deluxechest",
+            "extended-lobby-chest",
+            "lobby-deluxechest-02",
+            "lobby-deluxechest-01"});
+            this.listBox_runes.Location = new System.Drawing.Point(6, 113);
+            this.listBox_runes.Name = "listBox_runes";
+            this.listBox_runes.Size = new System.Drawing.Size(170, 274);
+            this.listBox_runes.TabIndex = 7;
+            this.listBox_runes.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.listBox_runes_ItemCheck);
             // 
             // lbl_XP
             // 
@@ -282,31 +315,21 @@
             this.btn_save.UseVisualStyleBackColor = true;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
-            // listBox_runes
+            // lbl_dtoolsStatus
             // 
-            this.listBox_runes.Enabled = false;
-            this.listBox_runes.FormattingEnabled = true;
-            this.listBox_runes.Items.AddRange(new object[] {
-            "unlocked-rune-o",
-            "unlocked-rune-i",
-            "unlocked-rune-a",
-            "unlocked-rune-h",
-            "unlocked-rune-v",
-            "unlocked-rune-n",
-            "unlocked-rune-e",
-            "unlocked-rune-p",
-            "unlocked-rune-t"});
-            this.listBox_runes.Location = new System.Drawing.Point(6, 128);
-            this.listBox_runes.Name = "listBox_runes";
-            this.listBox_runes.Size = new System.Drawing.Size(120, 139);
-            this.listBox_runes.TabIndex = 7;
-            this.listBox_runes.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.listBox_runes_ItemCheck);
+            this.lbl_dtoolsStatus.AutoSize = true;
+            this.lbl_dtoolsStatus.ForeColor = System.Drawing.Color.Green;
+            this.lbl_dtoolsStatus.Location = new System.Drawing.Point(13, 443);
+            this.lbl_dtoolsStatus.Name = "lbl_dtoolsStatus";
+            this.lbl_dtoolsStatus.Size = new System.Drawing.Size(0, 13);
+            this.lbl_dtoolsStatus.TabIndex = 4;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 489);
+            this.Controls.Add(this.lbl_dtoolsStatus);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.grp_savegame);
             this.Controls.Add(this.lbl_SavePath);
@@ -347,6 +370,7 @@
         private System.Windows.Forms.Label lbl_XP;
         private System.Windows.Forms.TextBox txt_XP;
         private System.Windows.Forms.CheckedListBox listBox_runes;
+        private System.Windows.Forms.Label lbl_dtoolsStatus;
     }
 }
 
