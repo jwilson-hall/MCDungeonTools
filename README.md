@@ -3,10 +3,11 @@ A Tool to customize Minecraft Dungeons saves
 # Dependencies
 Decryption tool used for the saves can be found here : https://github.com/HellPie/DungeonTools
 
+Newtonsoft.json library for processing json data https://github.com/JamesNK/Newtonsoft.Json
+
 ## Releases
 https://github.com/jwilson-hall/MCDungeonTools/releases
 
-Newtonsoft.json library for processing json data https://github.com/JamesNK/Newtonsoft.Json
 ## Coming soon
 There are many new features coming to this program that are still in development
 - edit which enchants weapons have
